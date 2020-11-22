@@ -1,3 +1,5 @@
+from datetime import datetime
+import timedelta
 import test
 import Physical
 import workOutType
@@ -25,9 +27,10 @@ print('2. 신체 변화 관리')
 Chose = input('기능을 선택해주세요.\n')
 
 if Chose == "1":
-    workOutType()
+    now = datetime.today()
+    nowDate = now.strftime('%Y-%m-%d')
+    workOutType.write_txt(nowDate)
+    workOutType.Chose
 
 elif Chose == "2":
-    Physical()
-    
-
+    Physical
