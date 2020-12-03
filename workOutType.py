@@ -1,5 +1,5 @@
 def write_txt(txt):
-    f=open('data.txt','a', encoding='UTF8')
+    f=open('workOutData.txt','a', encoding='UTF8')
     f.write(txt)
     f.close
 
