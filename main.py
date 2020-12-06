@@ -4,20 +4,7 @@ import userPhysical
 import workOutType
 
 
-print('오늘의 날짜를 다음과 같이 입력해주세요.\n예시) 2020-01-01')
-ToDay = input('날짜 : ')
 print('사용자 정보를 입력해주세요.')
-userName = input('이름 : ')
-userAge = input('나이 : ')
-
-userGender = input('성별을 선택해주세요\n1. 남성\n2. 여성\n')
-while True:
-    if userGender not in '1':
-        if userGender not in '2':
-            print("올바른 입력을 해주세요.")
-            userGender = input('성별을 선택해주세요\n1. 남성\n2. 여성\n')
-            continue
-    break
 
 userHeight = int(input('키 : '))
 userWeight = int(input('몸무게 : '))
@@ -38,10 +25,22 @@ while True:
     break
 
 if Chose == '1':
-    now = datetime.ToDay()
+    now = datetime.today()
     nowDate = now.strftime('%Y-%m-%d')
     workOutType.write_txt(nowDate)
-    workOutType.Chose
+    workOutType.Chose()
 
 if Chose == '2':
-    userPhysical.recordTime(ToDay)
+    now = datetime.today()
+    nowDate = now.strftime('%Y-%m-%d')
+    userPhysical.recordTime(nowDate, str(userHeight), str(userWeight))
+    print("1. BMI 계산\n2. 신체 변화 확인")
+    TwoChose = input('기능을 선택해주세요.')
+    if TwoChose == '1':
+        userPhysical.BmiCal(userHeight, userWeight)
+    elif TwoChose == '2':
+        print('어느 날짜부터의 변화를 확인할지 선택해주세요.')
+        search = input('예시) 2020-01-01\n')
+        userPhysical.comPhy(search, nowDate)
+
+

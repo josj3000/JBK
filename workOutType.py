@@ -1,6 +1,6 @@
 def write_txt(txt):
     f=open('workOutData.txt','a', encoding='UTF8')
-    f.write(txt)
+    f.write(txt+'\n')
     f.close
 
 def Chose():
